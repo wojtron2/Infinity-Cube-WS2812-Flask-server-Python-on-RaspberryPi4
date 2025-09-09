@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sterowanie WS2812</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Sterowanie WS2812 Infinity Bar</h1>
+    
+    <div class="predefined-colors">
+    <p>Wybierz predefiniowany kolor:</p>
+    <div class="color-grid">
+        <div class="color-tile" style="background-color: red;" onclick="setPredefinedColor(255, 0, 0)"></div>
+        <div class="color-tile" style="background-color: green;" onclick="setPredefinedColor(0, 255, 0)"></div>
+        <div class="color-tile" style="background-color: blue;" onclick="setPredefinedColor(0, 0, 255)"></div>
+        <div class="color-tile" style="background-color: yellow;" onclick="setPredefinedColor(255, 255, 0)"></div>
+        <div class="color-tile" style="background-color: cyan;" onclick="setPredefinedColor(0, 255, 255)"></div>
+        <div class="color-tile" style="background-color: magenta;" onclick="setPredefinedColor(255, 0, 255)"></div>
+        <div class="color-tile" style="background-color: pink;" onclick="setPredefinedColor(255, 192, 203)"></div>
+        <div class="color-tile" style="background-color: white;" onclick="setPredefinedColor(255, 255, 255)"></div>
+        <div class="color-tile" style="background-color: orange;" onclick="setPredefinedColor(255, 165, 0)"></div>
+        <div class="color-tile" style="background-color: purple;" onclick="setPredefinedColor(128, 0, 128)"></div>
+        <div class="color-tile" style="background-color: navy;" onclick="setPredefinedColor(0, 0, 128)"></div>
+        <div class="color-tile" style="background-color: lime;" onclick="setPredefinedColor(50, 205, 50)"></div>
+        <div class="color-tile" style="background-color: teal;" onclick="setPredefinedColor(0, 128, 128)"></div>
+        <div class="color-tile" style="background-color: brown;" onclick="setPredefinedColor(165, 42, 42)"></div>
+        <div class="color-tile" style="background-color: gold;" onclick="setPredefinedColor(255, 215, 0)"></div>
+        <div class="color-tile" style="background-color: gray;" onclick="setPredefinedColor(128, 128, 128)"></div>
+    </div>
+    </div>
+
+
+    <label for="colorPicker">Wybierz dowolny kolor:</label>
+    <input type="color" id="colorPicker" value="#ff0000">
+    <button onclick="setColor()">Ustaw kolor</button>
+    <button onclick="turnOff()">Wylacz</button>
+
+    <br><br>
+
+    <label for="brightness">Jasnosc:</label>
+    <input type="range" id="brightness" min="0" max="255" value="25" step="5" oninput="setBrightness()">
+    <span id="brightnessValue">25</span>
+
+    <br><br>
+
+    <label for="delay">Predkosc teczy:</label>
+    <input type="range" id="delay" min="5" max="100" value="20" step="5" oninput="updateDelayValue()">
+    <span id="delayValue">20</span> ms
+
+    <br><br>
+    
+    <button onclick="startAnimation('rainbow')">Start teczy</button>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
