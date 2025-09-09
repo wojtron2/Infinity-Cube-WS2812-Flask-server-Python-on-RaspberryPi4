@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sterowanie LED WS2812</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Sterowanie WS2812</h1>
+
+    <label for="colorPicker">Wybierz kolor:</label>
+    <input type="color" id="colorPicker" value="#ff0000">
+    <button onclick="setColor()">Ustaw kolor</button>
+    <button onclick="turnOff()">Wylacz</button>
+
+    <br><br>
+
+    <label for="brightness">Jasnosc:</label>
+    <input type="range" id="brightness" min="0" max="255" value="25" oninput="setBrightness()">
+    <span id="brightnessValue">25</span>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
